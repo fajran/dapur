@@ -1,0 +1,45 @@
+*Pick And Place List
+*Company=
+*Author=
+*eMail=
+*
+*Project=penghubung-lampu-laci
+*Date=23:47:55
+*CreatedBy=Fritzing 0.9.2b.11.19.8d2d5970658f0bed09c661c9ea9a515b5f40f44c
+*
+*
+*Coordinates in mm, always center of component
+*Origin 0/0=Lower left corner of PCB
+*Rotation in degree (0-360, math. pos.)
+*
+*No;Value;Package;X;Y;Rotation;Side;Name
+1;;;7.1628;-10.1575;0;Bottom;Copper Fill13
+2;;THT;47.6227;-14.6683;90;Bottom;Port4
+3;;;7.1628;-10.1575;0;Bottom;Copper Fill3
+4;;;20.7645;-16.1392;0;Bottom;Copper Fill7
+5;;THT;7.61772;-9.96927;180;Bottom;Base
+6;;;33.528;-10.729;0;Bottom;Copper Fill11
+7;;;34.7345;-7.2492;0;Bottom;Copper Fill8
+8;;;48.7045;-16.1392;0;Bottom;Copper Fill15
+9;;;6.85572;-17.7163;0;Bottom;Hole2
+10;;;19.558;-10.729;0;Bottom;Copper Fill10
+11;;;35.179;-9.5098;0;Bottom;Copper Fill2
+12;;;20.7645;-16.1392;0;Bottom;Copper Fill17
+13;;;8.9662;-10.1575;0;Bottom;Copper Fill14
+14;;THT;19.6827;-14.6683;90;Bottom;Port0
+15;;;34.7345;-16.1392;0;Bottom;Copper Fill6
+16;;THT;19.6827;-5.77827;90;Bottom;Port1
+17;;THT;33.6527;-14.6683;90;Bottom;Port2
+18;;;5.05612;-15.1313;0;Bottom;TXT1
+19;;THT;33.6527;-5.77827;90;Bottom;Port3
+20;;;48.3362;-5.0775;0;Bottom;Copper Fill18
+21;;;34.7345;-16.1392;0;Bottom;Copper Fill16
+22;;;41.1457;-10.0963;0;Bottom;Hole1
+23;;;20.7645;-7.2492;0;Bottom;Copper Fill4
+24;;;48.7045;-16.1392;0;Bottom;Copper Fill5
+25;;;31.9993;-1.04092;0;Bottom;TXT2
+26;;THT;48.0037;-5.14327;0;Bottom;Next
+27;;;6.85572;-2.47627;0;Bottom;Hole3
+28;;;46.5074;-9.7638;0;Bottom;Copper Fill12
+29;;;27.4828;-10.0178;0;Bottom;Copper Fill9
+30;;;27.4828;-10.0178;0;Bottom;Copper Fill1
