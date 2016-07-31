@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source /home/iang/project/Elektronika/dev/elektronika/sensor-laci-dapur/TCRT5000/r01/pcb/sensor-laci-dapur.sch)
-    (date "zo 31 jul 2016 04:07:52 CEST")
+    (date "zo 31 jul 2016 21:38:04 CEST")
     (tool "Eeschema 4.0.2+e4-6225~38~ubuntu15.04.1-stable")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -41,7 +41,7 @@
       (tstamp 57893D49))
     (comp (ref Port1)
       (value 1_Out)
-      (footprint Connectors_Molex:Molex_KK-6410-03_03x2.54mm_Straight)
+      (footprint Connectors_JST:JST_XH_S03B-XH-A_03x2.50mm_Angled)
       (libsource (lib Connector) (part 1_Out))
       (sheetpath (names /) (tstamps /))
       (tstamp 57893FCB)))
