@@ -5,5 +5,6 @@ Rangkaian elektronika (dan PCB) ini dibuat untuk membuat sensor yang mendeteksi
 apakah laci dapur (bisa juga yang lain :) dalam keadaan terbuka atau tidak.
 
 Sensor yang digunakan adalah
-[CNY70](http://www.vishay.com/docs/83751/cny70.pdf).
+[CNY70](http://www.vishay.com/docs/83751/cny70.pdf) atau
+[TCRT5000](http://www.vishay.com/docs/83760/tcrt5000.pdf)
 
