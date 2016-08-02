@@ -94,7 +94,7 @@ Wire Wire Line
 Wire Wire Line
 	5150 3050 4650 3050
 Wire Wire Line
-	5150 2750 4800 2750
+	4800 2750 5150 2750
 Wire Wire Line
 	4800 2500 4800 2850
 Wire Wire Line
@@ -128,21 +128,21 @@ Wire Wire Line
 Wire Wire Line
 	3100 2200 3250 2200
 Connection ~ 4850 2200
+Text Label 4950 2750 0    60   ~ 0
++5V
+Text Label 4950 2650 0    60   ~ 0
+GND
+Text Label 4950 3050 0    60   ~ 0
+Out
 $Comp
-L 1_Out Port1
-U 1 1 57893FCB
+L 1_Out U?
+U 1 1 57A009A5
 P 5400 2700
-F 0 "Port1" H 5500 2450 60  0000 C CNN
+F 0 "U?" H 5500 2450 60  0000 C CNN
 F 1 "1_Out" H 5500 2850 60  0000 C CNN
-F 2 "Connectors_Molex:Molex_KK-6410-03_03x2.54mm_Straight" H 5400 2700 60  0001 C CNN
+F 2 "" H 5400 2700 60  0000 C CNN
 F 3 "" H 5400 2700 60  0000 C CNN
 	1    5400 2700
 	1    0    0    -1  
 $EndComp
-Text Label 4950 2650 0    60   ~ 0
-+5V
-Text Label 4950 2750 0    60   ~ 0
-GND
-Text Label 4950 3050 0    60   ~ 0
-Out
 $EndSCHEMATC
