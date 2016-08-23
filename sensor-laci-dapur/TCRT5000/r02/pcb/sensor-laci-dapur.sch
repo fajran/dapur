@@ -1,0 +1,194 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:TCRT5000L
+LIBS:Connector
+LIBS:sensor-laci-dapur-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L TCRT5000L Sensor1
+U 1 1 57893C3C
+P 3650 2300
+F 0 "Sensor1" H 3350 2520 50  0000 L CNN
+F 1 "TCRT5000L" H 3350 1900 50  0000 L CNN
+F 2 "TCRT5000L:XDCR_TCRT5000L" H 3650 2300 50  0001 L CNN
+F 3 "" H 3650 2300 60  0000 C CNN
+	1    3650 2300
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R2
+U 1 1 57893C83
+P 4500 3350
+F 0 "R2" V 4580 3350 50  0000 C CNN
+F 1 "1K" V 4500 3350 50  0000 C CNN
+F 2 "Resistors_SMD:R_1206_HandSoldering" V 4430 3350 50  0001 C CNN
+F 3 "" H 4500 3350 50  0000 C CNN
+	1    4500 3350
+	0    1    1    0   
+$EndComp
+$Comp
+L R R1
+U 1 1 57893D2E
+P 4500 2850
+F 0 "R1" V 4580 2850 50  0000 C CNN
+F 1 "10K" V 4500 2850 50  0000 C CNN
+F 2 "Resistors_SMD:R_1206_HandSoldering" V 4430 2850 50  0001 C CNN
+F 3 "" H 4500 2850 50  0000 C CNN
+	1    4500 2850
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R3
+U 1 1 57893D49
+P 4250 2200
+F 0 "R3" V 4330 2200 50  0000 C CNN
+F 1 "100" V 4250 2200 50  0000 C CNN
+F 2 "Resistors_SMD:R_1206_HandSoldering" V 4180 2200 50  0001 C CNN
+F 3 "" H 4250 2200 50  0000 C CNN
+	1    4250 2200
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4800 2500 4800 2950
+Wire Wire Line
+	4800 2850 4650 2850
+Wire Wire Line
+	3250 2500 3100 2500
+Wire Wire Line
+	3100 2500 3100 2850
+Wire Wire Line
+	3100 2850 4350 2850
+Wire Wire Line
+	4050 2850 4050 3350
+Connection ~ 4050 2850
+Wire Wire Line
+	4050 2500 4800 2500
+Wire Wire Line
+	4850 1900 3100 1900
+Wire Wire Line
+	3100 1900 3100 2200
+Wire Wire Line
+	3100 2200 3250 2200
+Text Label 5000 3350 2    60   ~ 0
+Out
+$Comp
+L 1_Out U1
+U 1 1 57A009A5
+P 6950 2450
+F 0 "U1" H 7050 2200 60  0000 C CNN
+F 1 "1_Out" H 7050 2600 60  0000 C CNN
+F 2 "Connectors_JST:JST_XH_S03B-XH-A_03x2.50mm_Angled" H 6950 2450 60  0001 C CNN
+F 3 "" H 6950 2450 60  0000 C CNN
+	1    6950 2450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4050 3350 4350 3350
+Wire Wire Line
+	5000 3350 4650 3350
+$Comp
+L GND #PWR01
+U 1 1 57BCD09E
+P 4800 2950
+F 0 "#PWR01" H 4800 2700 50  0001 C CNN
+F 1 "GND" H 4800 2800 50  0000 C CNN
+F 2 "" H 4800 2950 50  0000 C CNN
+F 3 "" H 4800 2950 50  0000 C CNN
+	1    4800 2950
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR02
+U 1 1 57BCD0BF
+P 6600 2700
+F 0 "#PWR02" H 6600 2450 50  0001 C CNN
+F 1 "GND" H 6600 2550 50  0000 C CNN
+F 2 "" H 6600 2700 50  0000 C CNN
+F 3 "" H 6600 2700 50  0000 C CNN
+	1    6600 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L +5V #PWR03
+U 1 1 57BCD0D6
+P 4850 1800
+F 0 "#PWR03" H 4850 1650 50  0001 C CNN
+F 1 "+5V" H 4850 1940 50  0000 C CNN
+F 2 "" H 4850 1800 50  0000 C CNN
+F 3 "" H 4850 1800 50  0000 C CNN
+	1    4850 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L +5V #PWR04
+U 1 1 57BCD0F7
+P 6450 2300
+F 0 "#PWR04" H 6450 2150 50  0001 C CNN
+F 1 "+5V" H 6450 2440 50  0000 C CNN
+F 2 "" H 6450 2300 50  0000 C CNN
+F 3 "" H 6450 2300 50  0000 C CNN
+	1    6450 2300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6700 2400 6600 2400
+Wire Wire Line
+	6600 2400 6600 2700
+Wire Wire Line
+	6700 2500 6450 2500
+Wire Wire Line
+	6450 2500 6450 2300
+Text Label 6250 2600 0    60   ~ 0
+Out
+Wire Wire Line
+	6250 2600 6700 2600
+Connection ~ 4800 2850
+Wire Wire Line
+	4100 2200 4050 2200
+Wire Wire Line
+	4850 2200 4850 1800
+Connection ~ 4850 1900
+Wire Wire Line
+	4400 2200 4850 2200
+$EndSCHEMATC
