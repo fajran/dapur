@@ -1,0 +1,46 @@
+*Pick And Place List
+*Company=
+*Author=
+*eMail=
+*
+*Project=Sensor Laci Dapur
+*Date=22:51:55
+*CreatedBy=Fritzing 0.9.2b.11.19.8d2d5970658f0bed09c661c9ea9a515b5f40f44c
+*
+*
+*Coordinates in mm, always center of component
+*Origin 0/0=Lower left corner of PCB
+*Rotation in degree (0-360, math. pos.)
+*
+*No;Value;Package;X;Y;Rotation;Side;Name
+1;;THT;26.6766;-4.92208;180;Bottom;D
+2;;;43.3833;-1.71959;0;Bottom;Copper Fill17
+3;;;44.1453;-7.5235;0;Bottom;Copper Fill6
+4;;;2.5273;-8.3744;0;Bottom;Copper Fill20
+5;1k;THT;7.62662;-2.38208;0;Bottom;R3
+6;;;1.651;-7.5235;0;Bottom;Copper Fill21
+7;;;35.5871;-3.65823;0;Bottom;TXT1
+8;;;34.798;-5.9614;0;Bottom;Copper Fill1
+9;;;45.9233;-7.5235;0;Bottom;Copper Fill18
+10;;THT;45.0916;-4.92208;180;Bottom;+5 Out GND
+11;;;1.651;-7.5235;0;Bottom;Copper Fill13
+12;;;37.1923;-4.81526;0;Bottom;TXT1
+13;;;6.5786;-5.9614;0;Bottom;Copper Fill4
+14;;;5.06731;-4.13259;0;Bottom;Copper Fill19
+15;;;45.047;-8.4252;0;Bottom;Copper Fill5
+16;;;3.35281;-7.5235;0;Bottom;Copper Fill14
+17;;;5.89281;-4.98349;0;Bottom;Copper Fill10
+18;;;2.5273;-6.67259;0;Bottom;Copper Fill12
+19;;;2.5273;-8.3744;0;Bottom;Copper Fill11
+20;;;47.3457;-5.0216;0;Bottom;Copper Fill2
+21;;;5.06731;-5.83439;0;Bottom;Copper Fill8
+22;;THT;24.1366;-4.92208;180;Bottom;E
+23;;;23.7998;-4.6152;0;Bottom;Copper Fill3
+24;;;47.3457;-5.0216;0;Bottom;Copper Fill15
+25;;;38.422;-8.31587;0;Bottom;TXT2
+26;100;THT;10.1666;-4.92208;0;Bottom;R1
+27;;;45.9233;-7.5235;0;Bottom;Copper Fill7
+28;10k;THT;7.62662;-7.46208;0;Bottom;R2
+29;;;22.733;-5.0216;0;Bottom;Copper Fill16
+30;;THT;26.6766;-4.92208;180;Bottom;D
+31;;;4.19101;-4.98349;0;Bottom;Copper Fill9
