@@ -1,8 +1,9 @@
-Eksperimen Elektronika
-======================
+Dapur
+=====
 
-Repositori ini berisi hasil eksperimen dengan elektronika (baca: arduino,
-sensor, resistor, transistor, dan lain-lain).
+Repositori ini berisi hasil eksperimen saya dengan elektronika (baca: arduino,
+sensor, resistor, transistor, dan lain-lain) dalam rangka membuat modul-modul
+yang (akan) dipakai di dapur di rumah saya.
 
 PERHATIAN! Saya tidak memiliki latar belakang pendidikan formal di bidang
 elektronika. Saya hanya mencomot informasi dari sana-sini yang tersebar di
