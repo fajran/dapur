@@ -28,6 +28,7 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
+LIBS:drawer lighting connector-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
@@ -97,7 +98,7 @@ U 1 1 57C338B9
 P 4900 2050
 F 0 "P2" H 4900 2300 50  0000 C CNN
 F 1 "CONN_01X04" V 5000 2050 50  0000 C CNN
-F 2 "Pad:FourPad_2.0mm" H 4900 2050 50  0001 C CNN
+F 2 "Pad:FourPad_2.0mm_FrontPTH_Side" H 4900 2050 50  0001 C CNN
 F 3 "" H 4900 2050 50  0000 C CNN
 	1    4900 2050
 	-1   0    0    1   
