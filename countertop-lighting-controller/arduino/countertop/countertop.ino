@@ -14,10 +14,9 @@ Adafruit_NeoPixel np = Adafruit_NeoPixel(PIXELS, PIN_STRIP, NEO_GRB + NEO_KHZ800
 int prevButton = LOW;
 unsigned long lastTime = 0;
 
-int state = LOW;
+int buttonState = LOW;
 int count = 0;
 
-int changed = 0;
 unsigned long lastRefresh = 0;
 
 void setup() {
@@ -33,6 +32,19 @@ void setup() {
 }
 
 void loop() {
+  int changed = detectChange();
+
+  if (changed) {
+    count = (count % PIXELS) + 1;
+  }
+
+  if (changed || (millis() - lastRefresh > REFRESH)) {
+    lastRefresh = millis();
+    refresh();
+  }
+}
+
+int detectChange() {
   int button = digitalRead(PIN_BUTTON);
   if (button != prevButton) {
     lastTime = millis();
@@ -40,21 +52,15 @@ void loop() {
   prevButton = button;
 
   if (millis() - lastTime > DEBOUNCE) {
-    if (button != state) {
-      state = button;
-      if (state == HIGH) {
-        count = (count % PIXELS) + 1;
-        changed = 1;
+    if (button != buttonState) {
+      buttonState = button;
+      if (buttonState == HIGH) {
+        return 1;
       }
     }
   }
 
-  if (changed || (millis() - lastRefresh > REFRESH)) {
-    lastRefresh = millis();
-    refresh();
-  }
-
-  changed = 0;
+  return 0;
 }
 
 void refresh() {
