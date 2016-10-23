@@ -5,9 +5,20 @@
 #define PIN_STRIP  2
 
 #define DEBOUNCE   200
+#define REFRESH    5000
 
 #define PIXELS     15
 Adafruit_NeoPixel np = Adafruit_NeoPixel(PIXELS, PIN_STRIP, NEO_GRB + NEO_KHZ800);
+
+
+int prevButton = LOW;
+unsigned long lastTime = 0;
+
+int state = LOW;
+int count = 0;
+
+int changed = 0;
+unsigned long lastRefresh = 0;
 
 void setup() {
   pinMode(PIN_BUTTON, INPUT);
@@ -17,13 +28,9 @@ void setup() {
   for (int i=0; i<PIXELS; i++)
     np.setPixelColor(i, np.Color(0, 0, 0));
   np.show();
+
+  refresh();
 }
-
-int prevButton = LOW;
-unsigned long lastTime = 0;
-
-int state = LOW;
-int count = 0;
 
 void loop() {
   int button = digitalRead(PIN_BUTTON);
@@ -37,10 +44,20 @@ void loop() {
       state = button;
       if (state == HIGH) {
         count = (count % PIXELS) + 1;
+        changed = 1;
       }
     }
   }
 
+  if (changed || (millis() - lastRefresh > REFRESH)) {
+    lastRefresh = millis();
+    refresh();
+  }
+
+  changed = 0;
+}
+
+void refresh() {
   if (count % 2 == 0) {
     digitalWrite(PIN_LED, LOW);
   } else {
