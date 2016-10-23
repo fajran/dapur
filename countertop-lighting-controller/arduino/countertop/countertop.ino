@@ -17,7 +17,14 @@ unsigned long lastTime = 0;
 int buttonState = LOW;
 int count = 0;
 
+#define STATES 5
+int state = 0;
+int led = 0;
+
 unsigned long lastRefresh = 0;
+
+const uint32_t COLOR_OFF = np.Color(0, 0, 0);
+const uint32_t COLOR_ON = np.Color(64, 64, 64);
 
 void setup() {
   pinMode(PIN_BUTTON, INPUT);
@@ -35,7 +42,8 @@ void loop() {
   int changed = detectChange();
 
   if (changed) {
-    count = (count % PIXELS) + 1;
+    state = (state + 1) % STATES;
+    led = !led;
   }
 
   if (changed || (millis() - lastRefresh > REFRESH)) {
@@ -64,18 +72,32 @@ int detectChange() {
 }
 
 void refresh() {
-  if (count % 2 == 0) {
-    digitalWrite(PIN_LED, LOW);
-  } else {
+  if (led) {
     digitalWrite(PIN_LED, HIGH);
+  } else {
+    digitalWrite(PIN_LED, LOW);
   }
 
-  for (int i=0; i<count; i++) {
-    np.setPixelColor(i, np.Color(16, 0, 0));
+  for (int i=0; i<PIXELS; i++) 
+    np.setPixelColor(i, COLOR_OFF);
+
+  if (state == 1) {
+    for (int i=0; i<5; i++)
+      np.setPixelColor(i, COLOR_ON);
   }
-  for (int i=count; i<PIXELS; i++) {
-    np.setPixelColor(i, np.Color(0, 0, 16));
+  else if (state == 2) {
+    for (int i=5; i<10; i++)
+      np.setPixelColor(i, COLOR_ON);
   }
+  else if (state == 3) {
+    for (int i=10; i<15; i++)
+      np.setPixelColor(i, COLOR_ON);
+  }
+  else if (state == 4) {
+    for (int i=0; i<PIXELS; i++)
+      np.setPixelColor(i, COLOR_ON);
+  }
+
   np.show();
 }
 
