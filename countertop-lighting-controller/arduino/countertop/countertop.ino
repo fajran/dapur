@@ -1,4 +1,7 @@
 #include <Adafruit_NeoPixel.h>
+#ifdef __AVR__
+  #include <avr/power.h>
+#endif
 
 #define PIN_BUTTON 3
 #define PIN_LED    1
@@ -7,7 +10,7 @@
 #define DEBOUNCE   200
 #define REFRESH    5000
 
-#define PIXELS     15
+#define PIXELS     47
 Adafruit_NeoPixel np = Adafruit_NeoPixel(PIXELS, PIN_STRIP, NEO_GRB + NEO_KHZ800);
 
 
@@ -17,23 +20,32 @@ unsigned long lastTime = 0;
 int buttonState = LOW;
 int count = 0;
 
-#define STATES 5
+#define STATES 6
 int state = 0;
 int led = 0;
 
 unsigned long lastRefresh = 0;
 
 const uint32_t COLOR_OFF = np.Color(0, 0, 0);
-const uint32_t COLOR_ON = np.Color(64, 64, 64);
+const uint32_t COLOR_ON = np.Color(192, 192, 192);
+
+int rainbow = 0;
 
 void setup() {
+  #if defined (__AVR_ATtiny85__)
+    if (F_CPU == 16000000) clock_prescale_set(clock_div_1);
+  #endif
+
   pinMode(PIN_BUTTON, INPUT);
   pinMode(PIN_LED, OUTPUT);
   pinMode(PIN_STRIP, OUTPUT);
 
-  for (int i=0; i<PIXELS; i++)
-    np.setPixelColor(i, np.Color(0, 0, 0));
+  np.begin();
+
+  resetColor();
   np.show();
+
+  intro();
 
   refresh();
 }
@@ -71,6 +83,11 @@ int detectChange() {
   return 0;
 }
 
+void resetColor() {
+  for (int i = 0; i < PIXELS; i++)
+    np.setPixelColor(i, COLOR_OFF);
+}
+
 void refresh() {
   if (led) {
     digitalWrite(PIN_LED, HIGH);
@@ -78,26 +95,61 @@ void refresh() {
     digitalWrite(PIN_LED, LOW);
   }
 
-  for (int i=0; i<PIXELS; i++) 
-    np.setPixelColor(i, COLOR_OFF);
+  resetColor();
 
   if (state == 1) {
-    for (int i=0; i<5; i++)
+    for (int i = 0; i < 16; i++)
       np.setPixelColor(i, COLOR_ON);
   }
   else if (state == 2) {
-    for (int i=5; i<10; i++)
+    for (int i = 16; i < 32; i++)
       np.setPixelColor(i, COLOR_ON);
   }
   else if (state == 3) {
-    for (int i=10; i<15; i++)
+    for (int i=32; i<PIXELS; i++)
       np.setPixelColor(i, COLOR_ON);
   }
   else if (state == 4) {
     for (int i=0; i<PIXELS; i++)
       np.setPixelColor(i, COLOR_ON);
   }
+  else if (state == 5) {
+    for(int i=0; i<PIXELS; i++) {
+      np.setPixelColor(i, Wheel((i+rainbow) & 255));
+    }
+    rainbow = (rainbow + 1) % 255;
+    lastRefresh = millis() - REFRESH + 10; 
+  }
 
   np.show();
+}
+
+void intro() {
+  resetColor();
+
+  for(int j=0; j<256; j++) {
+    for(int i=0; i<PIXELS; i++) {
+      np.setPixelColor(i, Wheel((i+j) & 255));
+    }
+    np.show();
+    delay(1);
+  }
+
+  delay(500);
+  resetColor();
+  np.show();
+}
+
+uint32_t Wheel(byte WheelPos) {
+  WheelPos = 255 - WheelPos;
+  if(WheelPos < 85) {
+    return np.Color(255 - WheelPos * 3, 0, WheelPos * 3);
+  }
+  if(WheelPos < 170) {
+    WheelPos -= 85;
+    return np.Color(0, WheelPos * 3, 255 - WheelPos * 3);
+  }
+  WheelPos -= 170;
+  return np.Color(WheelPos * 3, 255 - WheelPos * 3, 0);
 }
 
