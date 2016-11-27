@@ -27,7 +27,7 @@ int led = 0;
 unsigned long lastRefresh = 0;
 
 const uint32_t COLOR_OFF = np.Color(0, 0, 0);
-const uint32_t COLOR_ON = np.Color(192, 192, 192);
+const uint32_t COLOR_ON = np.Color(255, 147, 41);
 
 int rainbow = 0;
 
